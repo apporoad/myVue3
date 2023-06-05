@@ -1,0 +1,25 @@
+<script type="importmap">
+  {
+    "imports":{
+      "vue" : "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <input v-bind="attrs" />
+</div>
+<script type="module">
+  import { createApp } from 'vue'
+  createApp({
+    data(){
+      return {
+        attrs : {
+          type : 'text',
+          value : 'hello hello good day',
+          disabled : true
+
+        }
+      }
+    }
+  }).mount('#app')
+</script>

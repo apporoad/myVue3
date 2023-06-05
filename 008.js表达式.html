@@ -1,0 +1,27 @@
+<script type="importmap">
+  {
+    "imports":{
+      "vue":"https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <h3>{{count + 3}}</h3>
+  <h3>{{ ok ? 'ok' : 'no ok'}}</h3>
+  <h3>{{ msg.split(' ').reverse().join(',')}}</h3>
+  <input type="text" :value="`hello ${msg}`" />
+  <!-- <h3>{{ if (ok) { return 'hello' + count } }}</h3> -->
+</div>
+<script type="module">
+  //https://cn.vuejs.org/guide/essentials/template-syntax.html#using-javascript-expressions
+  import {createApp} from 'vue'
+  createApp({
+    data(){
+      return {
+        count : 1,
+        ok : true,
+        msg : 'china is better'
+      }
+    }
+  }).mount('#app')
+</script>

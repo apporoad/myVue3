@@ -1,0 +1,23 @@
+<script type="importmap">
+  {
+    "imports":{
+      "vue" : "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <h3>{{  fn(abc) }}s</h3>
+</div>
+<script type="module">
+  import { createApp} from 'vue'
+  createApp({
+    data(){
+      return {
+        fn : function(one){
+          return one + ':one'
+        },
+        abc : "yes yes"
+      }
+    }
+  }).mount('#app')
+</script>
