@@ -1,0 +1,26 @@
+<script type="importmap">
+{
+  "imports":{
+    "vue" : "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+  }
+}
+</script>
+<div id="app">
+  <h3><a v-on:[eventname]="click">hello</a></h3>
+  <h3><a :["click" + index]>ok ok ....</a></h3> <!-- error here-->
+</div>
+<script type="module">
+  import {createApp} from 'vue'
+  createApp({
+    data(){
+      return {
+        eventname : 'click',
+        click : ()=> {
+          alert('hello hello good day')
+        },
+        index : 3
+      }
+      }
+    }
+  }).mount('#app')
+</script>

@@ -1,0 +1,39 @@
+<script type="importmap">
+  {
+    "imports":{
+      "vue" : "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <div id = "counter">{{count}}</div>
+  <a @click="click">click me ...</a>
+  <div><a @click="click1"> click ......</a></div>
+</div>
+<script type="module">
+  import { createApp , nextTick} from 'vue'
+  createApp({
+    data(){
+      return {
+        count : 1
+      }
+    },
+    methods:{
+      async click(){
+        this.count++
+        var div = document.getElementById('counter')
+        console.log('counter value : ' + div.textContent)
+        await nextTick()
+        console.log('counter value(after nextTick) : ' + div.textContent)
+      },
+      click1 : ()=> { 
+        // error  箭头函数
+        this.count++  
+      }
+    },
+    mounted(){
+      console.log(this.count++)
+      console.log(this.count++)
+    }
+  }).mount('#app')
+</script>
