@@ -16,6 +16,8 @@
 
   const vFor = reactive([])
   const testVFor = ()=>{ vFor.push('hello' + (vFor.length + 1))}
+
+  const vModel = ref(null)
 </script>
 <template>
   <div> v-text : <span v-text="vtext"></span></div>
@@ -24,5 +26,8 @@
   <div><span v-if="vIf"> v-if</span><button @click="testVIf">click to test v-if</button> </div>
   <div><span v-if="vIfElse"> v-if </span><span v-else> v-else</span><button @click="testVIfElse">click to test v-if-else</button></div>
   <div><button @click="testVFor">click to test v-for</button><span v-for="value in vFor">{{ value }}</span></div>
-  
+  <div><input type="text" v-model="vModel" /><span>{{  vModel }}</span></div>
+  <div><input type="text" v-model="vModel" /><span>{{  vModel }}</span></div>
+  <div v-pre> {{ here is v-pre , hello hello good day }}</div>
+  <div v-once>here is v-once {{ vHtml }} <button  @click="testVHtml">click to test v-once</button></div>
 </template>

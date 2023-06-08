@@ -1,6 +1,8 @@
 <script setup>
-  import VDemo from './VDemo.vue';
+  import VComponentDemo from './VComponentDemo.vue';
+import VDemo from './VDemo.vue';
 </script> 
 <template>
   <VDemo/>
+  <VComponentDemo/>
 </template>
