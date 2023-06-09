@@ -3,4 +3,4 @@ function sayHi(text : string){
 }
 
 let text = 'good day';
-sayHi(text);
+console.log(sayHi(text))
